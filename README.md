@@ -21,4 +21,4 @@ Additionally, an SQL database was used. This means that SQL will be needed for a
 
 ## Installation
 
-The complete contents of the Digital Names Reseller Website is contained within a zipped folder named "dn-reseller.zip".The process for installing the website is as follows:
+The complete contents of the Digital Names Reseller Website is contained within a zipped folder named "dn-reseller.zip". The process for installing the website is as follows:
