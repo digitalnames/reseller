@@ -12,7 +12,7 @@ To promote the greatest level of flexibility and customization, the Digital Name
 
 Technologies involved with the creation of the Digital Names Reseller Website include:
 
-* Html
+* HTML
 * CSS
 * Javascript (JQuery)
 * PHP
