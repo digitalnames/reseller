@@ -23,6 +23,8 @@ Additionally, an SQL database was used. This means that SQL will be needed for a
 
 The complete contents of the Digital Names Reseller Website is contained within a zipped folder named "dn-reseller.zip". The process for installing the zipped folder for the website is as follows:
 
-1. Upload the "dn-reseller.zip" file to the root path (public_html) of your server.
+1. Download the zip file for the website by first clicking on the green "code" button and then clicking on the "download zip" link.
 
-2. Once the zipped folder has been uploaded to the (public_html), extract the files from the folder. You should now have all files necessary within the (public_html)
+2. Upload the "dn-reseller.zip" file to the root path (public_html) of your server.
+
+2. Once the zipped folder has been uploaded to the (public_html), extract the files from the folder. You should now have all files necessary for the website, within the (public_html) directory.
