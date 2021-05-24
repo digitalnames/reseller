@@ -25,6 +25,8 @@ The complete contents of the Digital Names Reseller Website is contained within 
 
 1. Download the zip file for the website by first clicking on the green "code" button and then clicking on the "download zip" link.
 
-2. Upload the "dn-reseller.zip" file to the root path (public_html) of your server.
+2. Navigate to "File Manager" in your C-panel.
 
-2. Once the zipped folder has been uploaded to the (public_html), extract the files from the folder. You should now have all files necessary for the website, within the (public_html) directory.
+3. Upload the "dn-reseller.zip" file to the root path (public_html) of your server.
+
+4. Once the zipped folder has been uploaded to the (public_html), extract the files from the folder. You should now have all files necessary for the website, within the (public_html) directory.
