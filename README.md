@@ -31,4 +31,4 @@ The complete contents of the Digital Names Reseller Website is contained within 
 
 4. Once the zipped folder has been uploaded to the (public_html), extract the files from the folder. You should now have all files necessary for the website, within the (public_html) directory.
 
-## FTP Folder Installation
+## Installation Via FTP
