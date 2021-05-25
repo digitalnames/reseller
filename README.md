@@ -32,3 +32,9 @@ The complete contents of the Digital Names Reseller Website is contained within 
 4. Once the zipped folder has been uploaded to the (public_html), extract the files from the folder. You should now have all files necessary for the website, within the (public_html) directory.
 
 ## Installation Via FTP
+
+The complete contents of the Digital Names Reseller Website is contained within a zipped folder named "dn-reseller.zip". The process for installing the website files via FTP is as follows:
+
+1. Download the zip file for the website by first clicking on the green "code" button and then clicking on the "download zip" link.
+
+2. Using FTP utility software, such as FileZilla, upload the contents of the 
