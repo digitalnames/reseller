@@ -30,9 +30,9 @@ The complete contents of the Digital Names Reseller Website is contained within 
 3. Once the zipped folder has been uploaded to the (public_html), extract the files from the folder. You should now have all files necessary for the website, within the (public_html) directory.
 
 4. Navigate to the "MySQL Database Wizard" in your C-panel. Follow the steps provided, where you will do the following:
-    *4A - Create a database.
-    *4B - Create a database user.
-    *4C - Add user to the database. Be sure to select the checkbox for "ALL PRIVILEGES" and then click on "Next Step".
+* 4A - Create a database.
+* 4B - Create a database user.
+* 4C - Add user to the database. Be sure to select the checkbox for "ALL PRIVILEGES" and then click on "Next Step".
 
 5. Navigate to your domain name in the browser of your choice. You should see the default admin setup form.
 
