@@ -23,6 +23,7 @@ $company_name = get_field_value_by_id('settings','company_name',1);
 			</div>
 			<div class="fix three_by_ten floatleft h_400 border_box">
 				<span class="display_none" id="name_price"><?php echo $name_price; ?></span>
+				<span class="display_none" id="package_price">49.95</span>
 				<h1 class="fs_30 lh_40 font_bold textleft text_dark_ash pl_10 pr_10">Name List (Price: $<span id="total_price">0</span>)</h2>
 				<div class="fix ninty_percent" id="cart_wrapper">
 					

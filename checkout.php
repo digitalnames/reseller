@@ -9,7 +9,7 @@ if(isset($_SESSION['login_token']) && check_customer_login_token($_SESSION['logi
 	$name_price = get_field_value_by_id('settings','name_price',1);
 	$out_of_credits_message = get_field_value_by_id('settings','out_of_credits_message',1);
 }else{
-	header("Location: login.php");
+	header("Location: sign_up.php");
     exit();
 }
 ?>
@@ -31,6 +31,7 @@ if(isset($_SESSION['login_token']) && check_customer_login_token($_SESSION['logi
 			</div>
 			<div class="fix three_by_ten floatleft h_400 border_box">
 				<span class="display_none" id="name_price"><?php echo $name_price; ?></span>
+				<span class="display_none" id="package_price">49.95</span>
 				<h1 class="fs_30 lh_40 font_bold textleft text_dark_ash pl_10 pr_10">Name List (Price: $<span id="total_price">0</span>)</h2>
 				<div class="fix ninty_percent" id="cart_wrapper">
 					
@@ -59,9 +60,11 @@ if(isset($_SESSION['login_token']) && check_customer_login_token($_SESSION['logi
 									  fetch("get_admin_credits.php"),
 									  fetch("search_multiple_digital_name.php?digital_names="+localStorage.getItem('name_list')),
 									  fetch("get_admin_credits.php"),
-									  fetch("send_warning_credit_mail.php")
-									]).then( ([task1, task2, task3, task4]) => {
-									    return [task1.text(), task2.text(), task3.text(), task4.text()]
+									  fetch("send_warning_credit_mail.php"),
+									  fetch("product_package_exist.php?product_packages="+localStorage.getItem('productPackage')),
+
+									]).then( ([task1, task2, task3, task4, task5]) => {
+									    return [task1.text(), task2.text(), task3.text(), task4.text(), task5.text()]
 									})
 									.catch((err) => {
 									    console.log(err);
@@ -81,16 +84,24 @@ if(isset($_SESSION['login_token']) && check_customer_login_token($_SESSION['logi
 										return actions.reject();
 									}
 
+									if(result[4] > 0){
+										$('#checkout_error').html('Package is already active');
+										return actions.reject();
+									}
+
 									return actions.resolve();
 								},
 								createOrder: function(data, actions) {
+									let name_price = (localStorage.getItem("name_list") === null) ? 0 : parseFloat(localStorage.getItem("name_list").replace(/(^,)|(,$)/g, "").split(",").length * $('#name_price').html()).toFixed(2);
+									let package_price = (localStorage.getItem("productPackage") === null) ? 0 : parseFloat(JSON.parse(localStorage.getItem("productPackage")).length * $('#package_price').html()).toFixed(2);
+									let total_price = (parseFloat(name_price)+parseFloat(package_price)).toFixed(2);
 									return actions.order.create({
 										purchase_units: [
 											{
-												"description":"Digital Name",
+												"description":"Digital Names and Product Packages",
 												"amount":{
 													"currency_code": "USD",
-													"value": parseFloat(localStorage.getItem("name_list").replace(/(^,)|(,$)/g, "").split(",").length * $('#name_price').html()).toFixed(2)
+													"value": total_price
 												}
 											}
 										]
@@ -98,23 +109,55 @@ if(isset($_SESSION['login_token']) && check_customer_login_token($_SESSION['logi
 								},
 
 								onApprove: function(data, actions) {
-									return actions.order.capture().then(function(details) {
+									return actions.order.capture().then( async function(details) {
+										let name_price = (localStorage.getItem("name_list") === null) ? 0 : parseFloat(localStorage.getItem("name_list").replace(/(^,)|(,$)/g, "").split(",").length * $('#name_price').html()).toFixed(2);
+										let package_price = (localStorage.getItem("productPackage") === null) ? 0 : parseFloat(JSON.parse(localStorage.getItem("productPackage")).length * $('#package_price').html()).toFixed(2);
+										let total_price = (parseFloat(name_price)+parseFloat(package_price)).toFixed(2);
+
 										const formData = new FormData();
+										const formData_2 = new FormData();
 										formData.append('names', localStorage.getItem('name_list'));
-										fetch('save_digital_name.php', {
-											method: "POST",
-											body: formData
+										formData_2.append('product_packages', localStorage.getItem('productPackage'));
+										
+										// fetch('save_digital_name.php', {
+										// 	method: "POST",
+										// 	body: formData
+										// })
+										// .then(res => res.text())
+										// .then(data => {
+										// 	if(data == 'success'){
+										// 		localStorage.removeItem('name_list');
+										// 		window.location.href = "control_panel.php?from_checkout=yes";
+										// 	}
+										// })
+										// .catch(err => {
+										// 	console.log('Error -', err);
+										// });
+
+
+
+										let result = await Promise.all([
+											fetch('save_digital_name.php', {
+												method: "POST",
+												body: formData
+											}),
+											fetch('save_product_package.php', {
+												method: "POST",
+												body: formData_2
+											})
+										]).then( ([task1, task2]) => {
+											return [task1.text(), task2.text()]
 										})
-										.then(res => res.text())
-										.then(data => {
-											if(data == 'success'){
-												localStorage.removeItem('name_list');
-												window.location.href = "control_panel.php?from_checkout=yes";
-											}
-										})
-										.catch(err => {
-											console.log('Error -', err);
+										.catch((err) => {
+											console.log(err);
 										});
+										result = await Promise.all(result);
+										if(result[0] == 'success' && result[1] == 'success'){
+											localStorage.removeItem('name_list');
+											localStorage.removeItem('productPackage');
+											window.location.href = "control_panel.php?from_checkout=yes&amount="+total_price;
+										}
+										// console.log(result);
 										// alert('Transaction completed by ' + details.payer.name.given_name + '!');
 									});
 								},

@@ -1,7 +1,11 @@
 <?php 
 session_start();
+require '../config/constants.php';
 require '../config/connect_db.php';
 require '../services/db_functions.php';
+if(isDefaultAdmin()){
+	header("Location: admin_setup.php");
+}
 $company_name = get_field_value_by_id('settings','company_name',1);
 if(isset($_SESSION['login_token']) && check_admin_login_token($_SESSION['login_token'])){
 	header("Location: index.php");
@@ -34,6 +38,7 @@ if(isset($_POST['operation_name'])){
 		<?php include('layouts/head.php'); ?>
 		<div class="fix full div_mid mt_50">
 			<?php include('layouts/login_form.php'); ?>
+			
 		</div>
 	</div>
 	<script src="../js/jquery.min.js"></script>

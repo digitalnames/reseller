@@ -23,6 +23,20 @@ if(isset($_GET['R'])){
 	$unknown_click++;
 	update_settings('unknown_click',$unknown_click);
 }
+
+
+if(isset($_SESSION['login_token']) && check_customer_login_token($_SESSION['login_token'])){
+	$customer = get_customer_by_token($_SESSION['login_token']);
+
+	$field_value_array = array("name" => "Developer Package","customer_id" => $customer['id']);
+	$developer_result = get_by_table_multi_field_value('customer_packages', $field_value_array);
+	$developer_row = mysqli_fetch_assoc($developer_result);
+
+	$field_value_array = array("name" => "Speculator Package","customer_id" => $customer['id']);
+	$speculator_result = get_by_table_multi_field_value('customer_packages', $field_value_array);
+	$speculator_row = mysqli_fetch_assoc($speculator_result);
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,8 +94,13 @@ if(isset($_GET['R'])){
 					<h1 class="fs_22 lh_32 font_bold text_dark_ash">Speculator Package</h1>
 					<h2 class="fs_22 lh_32 font_bold text_dark_ash">$49.95</h2>
 					<p class="fs_14 lh_22 text_dark_ash">A new revenue stream that has reignited the DNS market explosion of the mid 90's.com boom.</p>
-
-					<a class="cursor_pointer display_block mt_10 full bt_1 br_1 bb_1 bl_1 border_solid border_dark_ash h_40 text_dark_grey bg_very_light_ash textcenter fs_14 font_bold lh_40 border_box" href="http://usa.tnsapi.cloud/call.cfm?apikey=KEY&command=speculator&cc=CUSTOMERCODE">Add to Cart</a>
+					
+					<?php if(!isset($_SESSION['login_token']) || (isset($_SESSION['login_token']) && is_null($speculator_row))){ ?>				
+					<button class="cursor_pointer display_block mt_10 full bt_1 br_1 bb_1 bl_1 border_solid border_dark_ash h_40 text_dark_grey bg_very_light_ash textcenter fs_14 font_bold lh_40 border_box" id="add_speculator_package_to_cart">Add to Cart</button>
+					<p class="fs_14 lh_40 font_bold textcenter display_none text_error" id="speculator_added">Added to Cart</p>	
+					<?php }else{ ?>
+					<p class="fs_14 lh_40 font_bold textcenter text_error">It's already active</p>
+					<?php } ?>
 				</div>
 			</div>
 			<div class="fix half floatleft">
@@ -89,8 +108,13 @@ if(isset($_GET['R'])){
 					<h1 class="fs_22 lh_32 font_bold text_dark_ash">Developer Package</h1>
 					<h2 class="fs_22 lh_32 font_bold text_dark_ash">$49.95</h2>
 					<p class="fs_14 lh_22 text_dark_ash">Create a front-end that sells Digital Names, incorporate Digital Names into your own wallet, or build your own marketplace.</p>
-
-					<a class="cursor_pointer display_block mt_10 full bt_1 br_1 bb_1 bl_1 border_solid border_dark_ash h_40 text_dark_grey bg_very_light_ash textcenter fs_14 font_bold lh_40 border_box" href="http://usa.tnsapi.cloud/call.cfm?apikey=KEY&command=developer&cc=CUSTOMERCODE">Add to Cart</a>
+					
+					<?php if(!isset($_SESSION['login_token']) || (isset($_SESSION['login_token']) && is_null($developer_row))){ ?>
+					<button class="cursor_pointer display_block mt_10 full bt_1 br_1 bb_1 bl_1 border_solid border_dark_ash h_40 text_dark_grey bg_very_light_ash textcenter fs_14 font_bold lh_40 border_box" id="add_developer_package_to_cart">Add to Cart</button>
+					<p class="fs_14 lh_40 font_bold textcenter display_none text_error" id="developer_added">Added to Cart</p>
+					<?php }else{ ?>
+					<p class="fs_14 lh_40 font_bold textcenter text_error">It's already active</p>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

@@ -22,16 +22,16 @@ if(isset($_POST['operation_name'])){
 		$error++;
 		$msg .= '- Email is required</br>';
 	}
-	if($_POST['phone']==''){
+	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 		$error++;
-		$msg .= '- Phone is required</br>';
+		$msg .= '- Email is not valid</br>';
 	}
 	if($_POST['password']==''){
 		$error++;
 		$msg .= '- Password is required</br>';
 	}
 	if($error == 0){
-		$found = register_customer($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['password']);
+		$found = register_customer($_POST['name'], $_POST['email'], $_POST['password']);
 		if($found){
 			header("Location: login.php");
 	    	exit();

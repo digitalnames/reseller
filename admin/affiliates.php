@@ -1,7 +1,7 @@
 <?php 
 session_start();
-require '../config/connect_db.php';
 require '../config/constants.php';
+require '../config/connect_db.php';
 require '../services/db_functions.php';
 require '../helpers/curl_helper.php';
 require '../helpers/string_helper.php';

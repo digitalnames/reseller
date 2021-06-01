@@ -10,16 +10,18 @@ $curl = curl_init();
 
 foreach($digital_names_array as $single_name){
 	// set our url with curl_setopt()
-	curl_setopt($curl, CURLOPT_URL, "http://usa.tnsapi.cloud/call.cfm?apikey=public&command=namelookup&digitalname=$single_name");
+	if($single_name != 'null'){
+		curl_setopt($curl, CURLOPT_URL, "http://usa.tnsapi.cloud/call.cfm?apikey=public&command=namelookup&digitalname=$single_name");
 
-	// return the transfer as a string, also with setopt()
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		// return the transfer as a string, also with setopt()
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-	// curl_exec() executes the started curl session
-	// $output contains the output string
-	$output = curl_exec($curl);
-	if($output > 0){
-		$error++;
+		// curl_exec() executes the started curl session
+		// $output contains the output string
+		$output = curl_exec($curl);
+		if($output > 0){
+			$error++;
+		}
 	}
 
 }

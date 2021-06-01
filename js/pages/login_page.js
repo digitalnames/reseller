@@ -29,7 +29,21 @@ function update_cart_list() {
 }
 function update_cart_show() {
 	let name_list_array = cart_name_list_array();
-	$('#name_in_cart').html(name_list_array.length);
+	let name_list_length = name_list_array.length;
+
+	let productPackageList = getProductPackageList();
+	let productPackageListLength = productPackageList.length;
+	let total_cart_items = name_list_length+productPackageListLength;
+	
+	$('#name_in_cart').html(total_cart_items);
+}
+function getProductPackageList(){
+	let productPackageList = localStorage.getItem("productPackage");
+	
+	productPackageList = (productPackageList === null) ? '[]' : productPackageList;
+	productPackageList =  JSON.parse(productPackageList);
+
+	return productPackageList;
 }
 function cart_name_list_array() {
 	let name_list = localStorage.getItem("name_list");

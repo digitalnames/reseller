@@ -20,14 +20,6 @@
 		id="email" 
 		placeholder="Enter email" 
 		value="<?php echo (isset($_POST['email']) ? $_POST['email'] : ''); ?>"/>
-
-		<input 
-		class="full h_30 full bt_1 br_1 bb_1 bl_1 border_solid border_ash pl_5 pr_5 border_box mt_10" 
-		type="text" 
-		name="phone" 
-		id="phone" 
-		placeholder="Enter phone number" 
-		value="<?php echo (isset($_POST['phone']) ? $_POST['phone'] : ''); ?>"/>
 		<input 
 		class="full h_30 full bt_1 br_1 bb_1 bl_1 border_solid border_ash pl_5 pr_5 border_box mt_10" 
 		type="password" 

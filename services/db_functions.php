@@ -14,7 +14,7 @@ function insert($table_name, $key_value_array = []){
 	}
 
 }
-function register_customer($name, $email, $phone, $password){
+function register_customer($name, $email, $password){
 	global $conn;
 
 	$affiliate_id = 0;
@@ -25,7 +25,7 @@ function register_customer($name, $email, $phone, $password){
 	}
 
 	$table_name = 'customers';
-	$sql = 'INSERT INTO `'.$table_name.'` (`name`,`email`,`phone`,`password`,`affiliate_id`,`registered_at`) VALUES ("'.$name.'","'.$email.'","'.$phone.'","'.$password.'",'.$affiliate_id.',"'.date('Y-m-d H:i:s').'")';
+	$sql = 'INSERT INTO `'.$table_name.'` (`name`,`email`,`password`,`affiliate_id`,`registered_at`) VALUES ("'.$name.'","'.$email.'","'.$password.'",'.$affiliate_id.',"'.date('Y-m-d H:i:s').'")';
 	if (mysqli_query($conn, $sql)) {
 		//echo "New record created successfully";
 	} else {
@@ -79,14 +79,14 @@ function store_names($names, $name_price, $login_token){
 	$row = mysqli_fetch_assoc($result);
 	$customer_id = $row['id'];
 	$customer_affiliate_id = $row['affiliate_id'];
-	$names_array = explode(",",trim($names,","));
+	$names_array = ($names != 'null') ? explode(",",trim($names,",")) : [];
 
 	$affiliate_result = get_by_id('affiliates', $customer_affiliate_id);
 	$affiliate_row = mysqli_fetch_assoc($affiliate_result);
 
 	$settings_result = get_by_id('settings', '1');
 	$settings_row = mysqli_fetch_assoc($settings_result);
-	$sale_percentage = $affiliate_row['sale_percentage'];
+	$sale_percentage = (isset($affiliate_row['sale_percentage'])) ? $affiliate_row['sale_percentage'] : 0;
 	$affiliate_program_type = $settings_row['affiliate_program_type'];
 	$original_price = $settings_row['name_price'];
 
@@ -106,6 +106,32 @@ function store_names($names, $name_price, $login_token){
 			}
 		} else {
 			$error++;
+		}
+	}
+	return $error;
+}
+function store_packages($packages, $package_price, $login_token){
+	global $conn;
+	$error = 0;
+	$sql = "SELECT * FROM customers WHERE login_token='$login_token'";
+	$result = mysqli_query($conn, $sql);
+	
+	$row = mysqli_fetch_assoc($result);
+	$customer_id = $row['id'];
+	$customer_affiliate_id = $row['affiliate_id'];
+	$packages_array = $packages;
+
+
+	foreach($packages_array as $single_package){
+		$field_value_array = array( "name" => $single_package->product_name, "customer_id" => $customer_id);
+
+		$result = get_by_table_multi_field_value('customer_packages', $field_value_array);
+		if($result->num_rows == 0){
+			$sql = "INSERT INTO `customer_packages` (`name`,`package_price`,`customer_id`) VALUES ('$single_package->product_name','$package_price','$customer_id')";
+			if (mysqli_query($conn, $sql)) {
+			} else {
+				$error++;
+			}
 		}
 	}
 	return $error;
@@ -240,6 +266,53 @@ function get_by_id($table, $id){
 	// $row = mysqli_fetch_object($result);	
 	return $result;
 }
+function get_by_table_single_field_value($table, $field, $value){
+	global $conn;
+	$sql = 'SELECT * FROM `'.$table.'` WHERE '.$field.'="'.$value.'"';
+	$result = mysqli_query($conn, $sql);
+	return $result;
+}
+function get_by_table_multi_field_value($table, $field_value_array){
+	global $conn;
+	$where_string = '';
+	
+	$i = 0;
+	$length = count($field_value_array);
+	foreach($field_value_array as $key=>$value){
+		if ($i == $length - 1) {
+	    	$where_string .= (is_numeric($value)) ? $key.'='.$value : $key.'="'.$value.'"';
+	    }else{
+	    	$where_string .= (is_numeric($value)) ? $key.'='.$value.' AND ' : $key.'="'.$value.'" AND ' ;
+	    }
+	    $i++;
+	}
+	$sql = 'SELECT * FROM `'.$table.'` WHERE '.$where_string;
+	$result = mysqli_query($conn, $sql);
+	return $result;
+}
+function get_total_other_products_signup(){
+	global $conn;
+	$sql = 'SELECT COUNT(DISTINCT customer_id) AS total_customer FROM customer_packages';
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);	
+	return $row['total_customer'];
+}
+function get_total_other_products_revenue(){
+	global $conn;
+	$sql = 'SELECT SUM(package_price) AS total_revenue FROM customer_packages';
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);	
+	return $row['total_revenue'];
+}
+function isDefaultAdmin(){
+	global $conn;
+	$field_value_array = array('email' => 'admin@email.com', 'password' => 'password');
+	$result = get_by_table_multi_field_value('admins', $field_value_array);
+	if($result->num_rows > 0){
+		return true;
+	}
+	return false;
+}
 function update_settings($field, $value, $id = 1){
 	global $conn;
 	if(get_all_rows_number('settings') > 0){
@@ -371,4 +444,21 @@ function get_all_signup_number_without_affiliate(){
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);	
 	return $row['total_affiliate_signups'];
+}
+function update_admin_default_credentials($name, $email, $password){
+	global $conn;
+	$sql = "UPDATE `admins` SET `name`='".mysqli_real_escape_string($conn,$name)."', `email`='".mysqli_real_escape_string($conn,$email)."', `password`='".mysqli_real_escape_string($conn,$password)."' WHERE email='admin@email.com' AND password='password'";
+	mysqli_query($conn, $sql);
+}
+function isEmailAdminEmailExist($email){
+	global $conn;
+	$table_name = 'admins';
+
+	$sql = "SELECT * FROM `".$table_name."` WHERE email='".mysqli_real_escape_string($conn,$email)."'";
+	$result = mysqli_query($conn, $sql);
+	if ($result->num_rows > 0) {
+		return true;
+	} else {
+		return false;
+	}	
 }

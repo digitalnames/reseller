@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require '../config/constants.php';
 require '../config/connect_db.php';
 require '../services/db_functions.php';
 require '../helpers/curl_helper.php';
@@ -29,6 +30,9 @@ if(isset($_SESSION['login_token']) && check_admin_login_token($_SESSION['login_t
 	$total_affiliate_signups = get_all_affiliate_signup_number();
 	$total_signups_without_affiliate = get_all_signup_number_without_affiliate();
 	$total_signups = $total_affiliate_signups + $total_signups_without_affiliate;
+
+	$total_other_products_signups = get_total_other_products_signup();
+	$total_other_products_revenue = get_total_other_products_revenue();
 }else{
 	header("Location: login.php");
     exit();
@@ -131,6 +135,26 @@ if(isset($_SESSION['login_token']) && check_admin_login_token($_SESSION['login_t
 						
 					</div>	
 					<?php } ?>
+
+					<div class="fix full bb_3 border_bottom_solid border_bottom_ash mt_30 display_block clear_both"></div>
+
+					<h1 class="fs_30 lh_40 font_bold text_dark_ash mt_30 mb_10 pl_5 pr_5">Other Products</h1>
+					<div class="fix full">
+						
+						<div class="fix twenty_five_percent floatleft mt_10">
+							<div class="fix ninty_five_percent div_mid pt_5 pr_5 pb_5 pl_5 border_box bt_1 br_1 bb_1 bl_1 border_solid border_dark_ash round_10">
+								<h4 class="fs_18 lh_30 font_bold text_dark_ash">Signups</h4>
+								<p class="fs_14 lh_22 font_bold text_dark_ash"><?php echo $total_other_products_signups; ?></p>
+							</div>
+						</div>
+						<div class="fix twenty_five_percent floatleft mt_10">
+							<div class="fix ninty_five_percent div_mid pt_5 pr_5 pb_5 pl_5 border_box bt_1 br_1 bb_1 bl_1 border_solid border_dark_ash round_10">
+								<h4 class="fs_18 lh_30 font_bold text_dark_ash">Total Revenue</h4>
+								<p class="fs_14 lh_22 font_bold text_dark_ash">$<?php echo $total_other_products_revenue; ?></p>
+							</div>
+						</div>
+						
+					</div>	
 				</div>
 			</div>
 		</div>

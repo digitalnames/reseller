@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require '../config/constants.php';
 require '../config/connect_db.php';
 require '../services/db_functions.php';
 

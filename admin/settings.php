@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require '../config/constants.php';
 require '../config/connect_db.php';
 require '../services/db_functions.php';
 
@@ -33,6 +34,9 @@ if(isset($_SESSION['login_token']) && check_admin_login_token($_SESSION['login_t
 	}elseif(isset($_POST['operation_update_email'])){
 		update_admin('email',$_POST['email'],$_SESSION['login_token']);
 	}elseif(isset($_POST['operation_update_password'])){
+		update_admin('password',$_POST['password'],$_SESSION['login_token']);
+	}elseif(isset($_POST['operation_update_email_password'])){
+		update_admin('email',$_POST['email'],$_SESSION['login_token']);
 		update_admin('password',$_POST['password'],$_SESSION['login_token']);
 	}elseif(isset($_POST['operation_update_everflow_js_sdk_code_brand_id'])){
 		update_settings('everflow_js_sdk_code',$_POST['everflow_js_sdk_code']);
@@ -176,9 +180,10 @@ if(isset($_SESSION['login_token']) && check_admin_login_token($_SESSION['login_t
 						</div>
 					</div>
 
-					<div class="fix half floatleft">
+					<div class="fix half floatleft h_150">
 						<div class="fix ninty_percent div_mid pt_10 pr_10 pb_10 pl_10 border_box">
-							<form action="settings.php" method="post">
+							&nbsp;
+							<!-- <form action="settings.php" method="post">
 								<input type="hidden" name="operation_update_email"/>
 							<p class="fs_14 font_bold text_dark_ash lh_22">Email</p>
 								<input 
@@ -192,14 +197,23 @@ if(isset($_SESSION['login_token']) && check_admin_login_token($_SESSION['login_t
 								class="cursor_pointer display_block mt_10 full bt_1 br_1 bb_1 bl_1 border_solid border_dark_ash h_40 text_dark_grey bg_very_light_ash textcenter fs_14 font_bold" 
 								type="submit" 
 								id="check_digital_name_button">Update</button>
-							</form>
+							</form> -->
 						</div>
 					</div>
 
 					<div class="fix half floatleft">
 						<div class="fix ninty_percent div_mid pt_10 pr_10 pb_10 pl_10 border_box">
 							<form action="settings.php" method="post">
-								<input type="hidden" name="operation_update_password"/>
+								<input type="hidden" name="operation_update_email_password"/>
+								<p class="fs_14 font_bold text_dark_ash lh_22">Email</p>
+								<input 
+								class="full h_30 full bt_1 br_1 bb_1 bl_1 border_solid border_ash pl_5 pr_5 border_box" 
+								type="text" 
+								name="email" 
+								id="email" 
+								placeholder="Enter an email" 
+								value="<?php echo $email; ?>"/>
+
 							<p class="fs_14 font_bold text_dark_ash lh_22">Password</p>
 								<input 
 								class="full h_30 full bt_1 br_1 bb_1 bl_1 border_solid border_ash pl_5 pr_5 border_box" 
