@@ -60,3 +60,5 @@ The complete contents of the Digital Names Reseller Website is contained within 
 6. Fill in the fields with then information you used to create the database in Step 4. **(PLEASE NOTE: in the first field that contains "ex: localhost" you should enter the word "localhost", unless you have a special condition within your server configuration that would cause a conflict with using "localhost as a defualt.)**
 
 7. Click "Submit" and your website will now be live.
+
+## Setup Administrator
