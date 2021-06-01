@@ -36,7 +36,7 @@ The complete contents of the Digital Names Reseller Website is contained within 
 
 5. Navigate to your domain name in the browser of your choice. You should see the default admin setup form.
 
-6. Fill in the fields with then information you used to create the database in Step 4. **(PLEASE NOTE: in the first field that contains "ex: localhost" you should enter the word "localhost", unless you have a special condition within your server configuration that would cause a conflict with using "localhost" as a defualt.)**
+6. Fill in the fields with the information you used to create the database in Step 4. **(PLEASE NOTE: in the first field that contains "ex: localhost" you should enter the word "localhost", unless you have a special condition within your server configuration that would cause a conflict with using "localhost" as a defualt.)**
 
 7. Click "Submit" and your website will now be live.
 
@@ -57,8 +57,18 @@ The complete contents of the Digital Names Reseller Website is contained within 
 
 5. Navigate to your domain name in the browser of your choice. You should see the default admin setup form.
 
-6. Fill in the fields with then information you used to create the database in Step 4. **(PLEASE NOTE: in the first field that contains "ex: localhost" you should enter the word "localhost", unless you have a special condition within your server configuration that would cause a conflict with using "localhost" as a defualt.)**
+6. Fill in the fields with the information you used to create the database in Step 4. **(PLEASE NOTE: in the first field that contains "ex: localhost" you should enter the word "localhost", unless you have a special condition within your server configuration that would cause a conflict with using "localhost" as a defualt.)**
 
 7. Click "Submit" and your website will now be live.
 
-## Setup Administrator
+## Site Administrator Setup
+
+Upon going live with your Digital Names reseller website, an administrator (admin) will need to be setup in order to access the features pertaining to connecting with the Digital Names API, establishing warnings for low credit levels, the set up of affiliate programs, and more. The process for setting up the site administrator is as follows:
+
+1. Navigate to "MY-DOMAIN/admin/admin_setup.php", where you will see a form to fill out and submit.
+
+2. Enter a name, email address, password (NOTE: Make sure to save this information in a safe place), and then click submit.
+
+3. Submitting the form will have you arrive at the admin login page at "MY-DOMAIN/admin/login.php", which is the url you will use from this point forward to access the administrator backend for the website. Enter the email and password you used in STEP 2 and then click "Login".
+
+4. At this point you have now entered the administrator backend for the website and are free to adjust any settings that are necessary.
