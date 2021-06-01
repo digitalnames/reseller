@@ -23,13 +23,22 @@ Additionally, an SQL database was used. This means that SQL will be needed for a
 
 The complete contents of the Digital Names Reseller Website is contained within a zipped folder named "dn-reseller.zip". The process for installing the zipped folder for the website is as follows:
 
-1. Download the zip file for the website by first clicking on the green "code" button and then clicking on the "download zip" link.
+1. Download the zip file for the website by first clicking on the green "code" button within the github repo, and then by clicking on the "download zip" link in the resulting dropdown menu.
 
-2. Navigate to "File Manager" in your C-panel.
+2. Navigate to "File Manager" in your C-panel and upload the "dn-reseller.zip" file to the root path (public_html) of your server that is hosting the domain name you will be using.
 
-3. Upload the "dn-reseller.zip" file to the root path (public_html) of your server.
+3. Once the zipped folder has been uploaded to the (public_html), extract the files from the folder. You should now have all files necessary for the website, within the (public_html) directory.
 
-4. Once the zipped folder has been uploaded to the (public_html), extract the files from the folder. You should now have all files necessary for the website, within the (public_html) directory.
+4. Navigate to the "MySQL Database Wizard" in your C-panel. Follow the steps provided, where you will do the following:
+    *4A - Create a database.
+    *4B - Create a database user.
+    *4C - Add user to the database. Be sure to select the checkbox for "ALL PRIVILEGES" and then click on "Next Step".
+
+5. Navigate to your domain name in the browser of your choice. You should see the default admin setup form.
+
+6. Fill in the fields with then information you used to create the database in Step 4. **(PLEASE NOTE: in the first field that contains "ex: localhost" you should enter the word "localhost", unless you have a special condition within your server configuration that would cause a conflict with using "localhost as a defualt.)**
+
+7. Click "Submit" and your website will now be live.
 
 ## Installation Via FTP
 
