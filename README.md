@@ -69,6 +69,6 @@ Upon going live with your Digital Names reseller website, an administrator (admi
 
 2. Enter a name, email address, password (NOTE: Make sure to save this information in a safe place), and then click submit.
 
-3. Submitting the form will have you arrive at the admin login page at "MY-DOMAIN/admin/login.php", which is the url you will use from this point forward to access the administrator backend for the website. Enter the email and password you used in STEP 2 and then click "Login".
+3. Submitting the form will bring you to the admin login page at "MY-DOMAIN/admin/login.php", which is the url you will use from this point forward to access the administrator backend for the website. Enter the email and password you used in STEP 2 and then click "Login".
 
 4. At this point you have now entered the administrator backend for the website and are free to adjust any settings that are necessary.
