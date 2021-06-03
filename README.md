@@ -77,7 +77,7 @@ Upon going live with your Digital Names reseller website, an administrator (admi
 
 The following sections will provide instructions on how to set up your Digital Names reseller website for immediate useage.
 
-### API Settings
+### __API Settings__
 
 Before it can become possible to sell Digital Names or any other products from the Digital Names reseller website, your API credentials.
 
