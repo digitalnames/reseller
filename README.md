@@ -81,10 +81,24 @@ The following sections will provide instructions on how to set up your Digital N
 
 Before it can become possible to sell Digital Names or any other products from the Digital Names reseller website, your API credentials.
 
-1. Sign into the administrator backend for your Digital Names reseller website
+1. Sign into the administrator backend for your Digital Names reseller website.
 
 2. On the navigation bar, click on "Settings".
 
 3. Look for the section labeled as "API Settings" and fill in your API Key and API URL into the appropriate form fields.
 
-4. Click update and your Digital Names reseller website should now be connected to the Total Network Service, Corp (TNS) API.
+4. Click "update" and your Digital Names reseller website should now be connected to the Total Network Service, Corp (TNS) API.
+
+### Digital Name Price
+
+Set the price of Digital Names that best fits your business goals and neesds.
+
+1. Sign into the administrator backend for your Digital Names reseller website.
+
+2. On the navigation bar, click on "Settings".
+
+3. Look for the section labeled as "Admin Settings.
+
+4. Find the form field labeled as "Digital Name Price", fill in your desired price.
+
+5. Click "update" and the price of Digit Names on your reseller website are now set.
