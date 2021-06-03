@@ -102,3 +102,17 @@ Set the price of Digital Names that best fits your business goals and neesds.
 4. Find the form field labeled as "Digital Name Price", fill in your desired price.
 
 5. Click "update" and the price of Digit Names on your reseller website are now set.
+
+### Paypal Client ID
+
+The Paypal Client ID is the email address you would like to use for any Paypal transactions on your Digital Names reseller website.
+
+1. Sign into the administrator backend for your Digital Names reseller website.
+
+2. On the navigation bar, click on "Settings".
+
+3. Look for the section labeled as "Admin Settings.
+
+4. Enter in the email address that corresponds to the Paypal account you will be using for transactions.
+
+5. Click "update" and your website is now ready to accept payments though Paypal.
