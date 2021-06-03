@@ -113,6 +113,20 @@ The Paypal Client ID is the email address you would like to use for any Paypal t
 
 3. Look for the section labeled as "Admin Settings.
 
-4. Enter in the email address that corresponds to the Paypal account you will be using for transactions.
+4. Find the form field labeled "Paypal Client ID" and enter in the email address that corresponds to the Paypal account you will be using for transactions.
 
 5. Click "update" and your website is now ready to accept payments though Paypal.
+
+### Low Credit Warning
+
+Your Digital Names reseller website cannot sell digital names without the propper number of credits. By setting a Low Credit Warning, you can receive an email alert when the number of credits have reached the threshold you have set.
+
+1. Sign into the administrator backend for your Digital Names reseller website.
+
+2. On the navigation bar, click on "Settings".
+
+3. Look for the section labeled as "Admin Settings.
+
+4. Find the form field labeled "Low Credit Warning" and enter in the amount of credits you would like to have as the threshold for receiving an email warning.
+
+5. Click "update" and you are now set to receive email warnings when your credits have reach the threshold you have set.
