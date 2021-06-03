@@ -72,3 +72,19 @@ Upon going live with your Digital Names reseller website, an administrator (admi
 3. Submitting the form will bring you to the admin login page at "MY-DOMAIN/admin/login.php", which is the url you will use from this point forward to access the administrator backend for the website. Enter the email and password you used in STEP 2 and then click "Login".
 
 4. At this point you have now entered the administrator backend for the website and are free to adjust any settings that are necessary.
+
+## Initial Site Setup
+
+The following sections will provide instructions on how to set up your Digital Names reseller website for immediate useage.
+
+### API Settings
+
+Before it can become possible to sell Digital Names or any other products from the Digital Names reseller website, your API credentials.
+
+1. Sign into the administrator backend for your Digital Names reseller website
+
+2. On the navigation bar, click on "Settings".
+
+3. Look for the section labeled as "API Settings" and fill in your API Key and API URL into the appropriate form fields.
+
+4. Click update and your Digital Names reseller website should now be connected to the Total Network Service, Corp (TNS) API.
