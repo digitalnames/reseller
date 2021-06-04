@@ -75,11 +75,11 @@ Upon going live with your Digital Names reseller website, an administrator (admi
 
 ## Initial Site Setup
 
-The following sections will provide instructions on how to set up your Digital Names reseller website for immediate useage.
+The following sections will provide instructions on how to set up your Digital Names reseller website for immediate usage.
 
 ### API Settings
 
-Before it can become possible to sell Digital Names or any other products from the Digital Names reseller website, your API credentials.
+Before it can become possible to sell Digital Names, or any other products, from the Digital Names reseller website, your API credentials must be set.
 
 1. Sign into the administrator backend for your Digital Names reseller website.
 
@@ -91,7 +91,7 @@ Before it can become possible to sell Digital Names or any other products from t
 
 ### Digital Name Price
 
-Set the price of Digital Names that best fits your business goals and neesds.
+Set the price of Digital Names that best fits your business goals and needs.
 
 1. Sign into the administrator backend for your Digital Names reseller website.
 
@@ -101,7 +101,7 @@ Set the price of Digital Names that best fits your business goals and neesds.
 
 4. Find the form field labeled as "Digital Name Price", fill in your desired price.
 
-5. Click "update" and the price of Digit Names on your reseller website are now set.
+5. Click "update" and the price of Digital Names on your reseller website are now set.
 
 ### Paypal Client ID
 
@@ -119,7 +119,7 @@ The Paypal Client ID is the email address you would like to use for any Paypal t
 
 ### Low Credit Warning
 
-Your Digital Names reseller website cannot sell digital names without the propper number of credits. By setting a Low Credit Warning, you can receive an email alert when the number of credits have reached the threshold you have set.
+Your Digital Names reseller website cannot sell digital names without the proper number of credits. By setting a Low Credit Warning, you can receive an email alert when the number of credits have reached the threshold you have set.
 
 1. Sign into the administrator backend for your Digital Names reseller website.
 
@@ -146,3 +146,22 @@ By setting your Affiliate Type, you can choose between operating your Digital Na
     * **Everflow** - You may select to utilize Everflow, which is a partner marketing platform that allows you to track performance channels. If you select Everflow, all you need to do is copy and paste the code snippets, that they provide, into their corresponding spaces marked "Everflow JS SDK Code" and "Brand ID Conversion Code". A dashboard is provided by Everflow to manage and monitor affiliate activity. Visit [Everflow's website](https://www.everflow.io/) to find out more.
 
     * **None** - With this selection, no affiliate program will be activated or partnered to.
+
+4. Click "update" and you are now set to either participate in an affiliate program, or use your Digital Name reseller website as a stand-alone environment.
+
+### Set Account Email & Password
+
+Use this feature to change and set the email and password that will be use for accessing the administrator backend of your Digital Names reseller website.
+
+1. Sign into the administrator backend for your Digital Names reseller website.
+
+2. On the navigation bar, click on "Settings".
+
+3. Look for the section labeled as "Admin Settings".
+
+4. Find the form input field marked "Email". Enter the email address of your choice. This email address will be the one used for:
+
+    * Logging into the administrator backend
+    * Receiving notification emails, such as password resets, low credit warnings, etc.
+
+5. Click "update" and your affiliate program selection has been set.
