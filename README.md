@@ -141,8 +141,8 @@ By setting your Affiliate Type, you can choose between operating your Digital Na
 
 3. Look for the section labeled as "Affiliate Account Settings". Here you will see a dropdown menu labeled as Affiliate Type. Select from one of 3 settings:
 
-    * **Internal** - The internal affiliate program enables you to create affiliate links that can be distributed to various third parties. These third parties will post the affiliate link on any internet assets they may have, in order to drive traffic to your Digital Names reseller website. This is done in exchange for a percentage of any sales revenue that result from the traffic driven in by the affiliate. A dashboard
+    * **Internal** - The internal affiliate program enables you to create affiliate links that can be distributed to various third parties. These third parties will post the affiliate link on any internet assets they may have, in order to drive traffic to your Digital Names reseller website. This is done in exchange for a percentage of any sales revenue that result from the traffic driven in by the affiliate. A dashboard is provided within the administrative backend to manage and monitor affiliate activity.
 
-    * **Everflow** - You may select to utilize Everflow, which is a partner marketing platform that allows you to track performance channels. If you select Everflow, all you need to do is copy and paste the code snippets, that they provide, into the their corresponding spaces marked "Everflow JS SDK Code" and "Brand ID Conversion Code".
+    * **Everflow** - You may select to utilize Everflow, which is a partner marketing platform that allows you to track performance channels. If you select Everflow, all you need to do is copy and paste the code snippets, that they provide, into their corresponding spaces marked "Everflow JS SDK Code" and "Brand ID Conversion Code". A dashboard is provided by Everflow to manage and monitor affiliate activity. Visit [Everflow's website](https://www.everflow.io/) to find out more.
 
-    * **None** - 
+    * **None** - With this selection, no affiliate program will be activated or partnered to.
