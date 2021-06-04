@@ -151,7 +151,7 @@ By setting your Affiliate Type, you can choose between operating your Digital Na
 
 ### Set Account Email & Password
 
-Use this feature to change and set the email and password that will be use for accessing the administrator backend of your Digital Names reseller website.
+Use this feature to change and set the email and password that will be used for accessing the administrator backend of your Digital Names reseller website.
 
 1. Sign into the administrator backend for your Digital Names reseller website.
 
