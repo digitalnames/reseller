@@ -164,4 +164,4 @@ Use this feature to change and set the email and password that will be used for 
     * Logging into the administrator backend
     * Receiving notification emails, such as password resets, low credit warnings, etc.
 
-5. Click "update" and your affiliate program selection has been set.
+5. Click "update" and the email and password should now be set for the account.
