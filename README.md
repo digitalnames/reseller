@@ -51,9 +51,9 @@ The complete contents of the Digital Names Reseller Website is contained within 
 3. Using FTP utility software, such as FileZilla, upload the extracted files to the "public_html" folder of your domain name's server. You should now have all files necessary for the website, within the (public_html) directory.
 
 4. Navigate to the "MySQL Database Wizard" in your C-panel. Follow the steps provided, where you will do the following:
-    * Item 4A - Create a database.
-    * Item 4B - Create a database user.
-    * Item 4C - Add user to the database. Be sure to select the checkbox for "ALL PRIVILEGES" and then click on "Next Step".
+    * **4A** - Create a database.
+    * **4B** - Create a database user.
+    * **4C** - Add user to the database. Be sure to select the checkbox for "ALL PRIVILEGES" and then click on "Next Step".
 
 5. Navigate to your domain name in the browser of your choice. You should see the default admin setup form.
 
@@ -143,4 +143,6 @@ By setting your Affiliate Type, you can choose between operating your Digital Na
 
     * **Internal** - The internal affiliate program enables you to create affiliate links that can be distributed to various third parties. These third parties will post the affiliate link on any internet assets they may have, in order to drive traffic to your Digital Names reseller website. This is done in exchange for a percentage of any sales revenue that result from the traffic driven in by the affiliate. A dashboard
 
-    * **Everflow** - 
+    * **Everflow** - You may select to utilize Everflow, which is a partner marketing platform that allows you to track performance channels. If you select Everflow, all you need to do is copy and paste the code snippets, that they provide, into the their corresponding spaces marked "Everflow JS SDK Code" and "Brand ID Conversion Code".
+
+    * **None** - 
