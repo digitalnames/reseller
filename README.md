@@ -97,7 +97,7 @@ Set the price of Digital Names that best fits your business goals and neesds.
 
 2. On the navigation bar, click on "Settings".
 
-3. Look for the section labeled as "Admin Settings.
+3. Look for the section labeled as "Admin Settings".
 
 4. Find the form field labeled as "Digital Name Price", fill in your desired price.
 
@@ -111,7 +111,7 @@ The Paypal Client ID is the email address you would like to use for any Paypal t
 
 2. On the navigation bar, click on "Settings".
 
-3. Look for the section labeled as "Admin Settings.
+3. Look for the section labeled as "Admin Settings".
 
 4. Find the form field labeled "Paypal Client ID" and enter in the email address that corresponds to the Paypal account you will be using for transactions.
 
@@ -125,8 +125,22 @@ Your Digital Names reseller website cannot sell digital names without the proppe
 
 2. On the navigation bar, click on "Settings".
 
-3. Look for the section labeled as "Admin Settings.
+3. Look for the section labeled as "Admin Settings".
 
 4. Find the form field labeled "Low Credit Warning" and enter in the amount of credits you would like to have as the threshold for receiving an email warning.
 
 5. Click "update" and you are now set to receive email warnings when your credits have reach the threshold you have set.
+
+### Affiliate Type
+
+By setting your Affiliate Type, you can choose between operating your Digital Names reseller website from one of 3 available settings. The settings are Internal, Everflow, and None.
+
+1. Sign into the administrator backend for your Digital Names reseller website.
+
+2. On the navigation bar, click on "Settings".
+
+3. Look for the section labeled as "Affiliate Account Settings". Here you will see a dropdown menu labeled as Affiliate Type. Select from one of 3 settings:
+
+    * Item **Internal** - The internal affiliate program enables you to create affiliate links that can be distributed to various third parties. These third parties will post the affiliate link on any internet assets they may have, in order to drive traffic to your Digital Names reseller website. This is done in exchange for a percentage of any sales revenue that result from the traffic driven in by the affiliate. A dashboard
+
+    * Item **Everflow** - 
