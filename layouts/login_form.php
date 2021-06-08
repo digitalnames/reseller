@@ -27,5 +27,6 @@
 		type="submit" 
 		id="check_digital_name_button">Login</button>
 	</form>
+	<a class="fs_14 text_sky_blue2 font_bold lh_22" href="forget_password.php">Forgot Password?</a>
 	<p class="fs_14 lh_22 font_bold text_dark_ash pl_5 pr_5 pt_10 pb_10">Are you new to this site? Please <a href="sign_up.php" class="fs_14 lh_22 font_bold text_sky_blue2">Sign Up</a></p>
 </div>

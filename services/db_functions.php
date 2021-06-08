@@ -462,3 +462,15 @@ function isEmailAdminEmailExist($email){
 		return false;
 	}	
 }
+function isEmailUserEmailExist($email){
+	global $conn;
+	$table_name = 'customers';
+
+	$sql = "SELECT * FROM `".$table_name."` WHERE email='".mysqli_real_escape_string($conn,$email)."'";
+	$result = mysqli_query($conn, $sql);
+	if ($result->num_rows > 0) {
+		return true;
+	} else {
+		return false;
+	}	
+}

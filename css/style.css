@@ -932,6 +932,12 @@ td,th{
 .border_right_dark_ash{ border-right-color: #ababab!important; }
 .border_right_dark_paste{border-right-color: #1d5c7d!important; }
 
+.border_left_black{ border-left-color: #000!important; }
+.border_left_brown{ border-left-color: #8E6D56!important; }
+.border_left_ash{ border-left-color: #cfcfcf!important; }
+.border_left_dark_ash{ border-left-color: #ababab!important; }
+.border_left_dark_paste{border-left-color: #1d5c7d!important; }
+
 .border_bottom_black{ border-bottom-color: #000!important; }
 .border_bottom_white{ border-bottom-color: #fff!important; }
 .border_bottom_brown{ border-bottom-color: #8E6D56!important; }
